@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Zero</title>
+    <link rel="stylesheet" href="style.css"> <!-- Linkar o visual -->
+</head>
+
+<body>
+    <header>
+        <h1>Calculadora Científica</h1>
+        <p>ㅤㅤ</p> <!-- Elemento invísivel para dividir o h1 acima e o p abaixo -->
+        <p>Matemática básica, funções, matrizes, análise combinatória e conversão de bases.</p>
+    </header>
+
+    <main>
+
+        <!-- Calculadora básica -->
+        <section class="card">
+            <h2>Calculadora básica</h2>
+
+            <div class="calculator">
+                <input
+                    type="text"
+                    id="display"
+                    placeholder="0"
+                >
+
+                <div class="calculator-buttons">
+                    <button data-value="1">1</button>
+                    <button data-value="2">2</button>
+                    <button data-value="3">3</button>
+                    <button data-value="4">4</button>
+
+                    <button data-value="5">5</button>
+                    <button data-value="6">6</button>
+                    <button data-value="7">7</button>
+                    <button data-value="8">8</button>
+
+                    <button data-value="9">9</button>
+                    <button data-value="0">0</button>
+                    <button data-action=".">.</button>
+                    <button data-value="+">+</button>
+                    <button data-value="-">−</button>
+
+                    <button data-value="*">x</button>
+                    <button data-value="/">÷</button>
+
+                    <button data-value="(">(</button>
+                    <button data-value=")">)</button>
+                    <button data-action="clear">C</button>
+                    <button data-action="backspace">⌫</button>
+                    <button class="equals" data-action="calculate">=</button>
+                </div>
+            </div>
+
+            <div id="basicResult" class="result"></div>
+        </section>
+
+        <!-- Funções -->
+        <section class="card">
+            <h2>Funções de x</h2>
+
+            <div class="form-grid">
+                <div>
+                    <label for="functionInput">f(x)</label>
+                    <input
+                        type="text"
+                        id="functionInput"
+                        placeholder="Ex.: x^2 + 2*x - 3"
+                    >
+                </div>
+
+                <div>
+                    <label for="xValue">Valor de x</label>
+                    <input
+                        type="number"
+                        id="xValue"
+                        placeholder="Ex.: 2"
+                        step="any"
+                    >
+                </div>
+            </div>
+
+            <div class="button-row">
+                <button id="calculateFunction">Calcular f(x)</button>
+
+            <div class="table-config">
+                <div>
+                    <label for="xStart">X inicial</label>
+                    <input type="number" id="xStart" value="-5" step="any">
+                </div>
+
+                <div>
+                    <label for="xEnd">X final</label>
+                    <input type="number" id="xEnd" value="5" step="any">
+                </div>
+
+                <div>
+                    <label for="xStep">Passo</label>
+                    <input type="number" id="xStep" value="1" step="any">
+                </div>
+            </div>
+
+            <div id="functionResult" class="result"></div>
+
+        </section>
+
+        <!-- Matrizes -->
+        <section class="card">
+            <h2>Matrizes</h2>
+
+            <div class="matrix-controls">
+                <div>
+                    <label for="matrixRowsA">Linhas de A</label>
+                    <input type="number" id="matrixRowsA" min="1" max="8" value="2">
+                </div>
+
+                <div>
+                    <label for="matrixColsA">Colunas de A</label>
+                    <input type="number" id="matrixColsA" min="1" max="8" value="2">
+                </div>
+
+                <div>
+                    <button id="createMatrixA">Criar matriz A</button>
+                </div>
+            </div>
+
+            <div id="matrixAContainer" class="matrix-container"></div>
+
+            <div class="matrix-controls">
+                <div>
+                    <label for="matrixRowsB">Linhas de B</label>
+                    <input type="number" id="matrixRowsB" min="1" max="8" value="2">
+                </div>
+
+                <div>
+                    <label for="matrixColsB">Colunas de B</label>
+                    <input type="number" id="matrixColsB" min="1" max="8" value="2">
+                </div>
+
+                <div>
+                    <button id="createMatrixB">Criar matriz B</button>
+                </div>
+            </div>
+
+            <div id="matrixBContainer" class="matrix-container"></div>
+
+            <div class="scalar-control">
+                <label for="scalar">Escalar</label>
+                <input type="number" id="scalar" value="2" step="any">
+            </div>
+
+            <div class="button-row">
+                <button id="scalarMultiply">A × escalar</button>
+                <button id="matrixMultiply">A × B</button>
+                <button id="determinant">det(A)</button>
+                <button id="transpose">Transposta de A</button>
+            </div>
+
+            <div id="matrixResult" class="result"></div>
+        </section>
+
+        <!-- Análise combinatória -->
+        <section class="card">
+            <h2>Análise combinatória</h2>
+
+            <div class="combinatorics-grid">
+                <div>
+                    <label for="combN">n</label>
+                    <input type="number" id="combN" min="0" step="1" placeholder="n">
+                </div>
+
+                <div>
+                    <label for="combR">r</label>
+                    <input type="number" id="combR" min="0" step="1" placeholder="r">
+                </div>
+            </div>
+
+            <div class="button-row">
+                <button id="factorial">Fatorial n!</button>
+                <button id="permutation">Permutação simples</button>
+                <button id="repetitionPermutation">
+                    Permutação com repetição
+                </button>
+                <button id="arrangement">Arranjo simples</button>
+                <button id="combination">Combinação simples</button>
+            </div>
+
+            <div class="repetition-control">
+                <h3>Permutação com repetição</h3>
+                <p>
+                    Informe as quantidades de cada elemento separadas por vírgula.
+                    Exemplo: <code>2,2,1</code>.
+                </p>
+
+                <input
+                    type="text"
+                    id="repetitionValues"
+                    placeholder="Ex.: 2,2,1"
+                >
+
+                <button id="calculateRepetition">
+                    Calcular
+                </button>
+            </div>
+
+            <div id="combinatoricsResult" class="result"></div>
+        </section>
+
+        <!-- Conversão de bases -->
+        <section class="card">
+            <h2>Conversor de bases</h2>
+
+            <div class="base-converter">
+                <div>
+                    <label for="baseInput">Número</label>
+                    <input
+                        type="text"
+                        id="baseInput"
+                        placeholder="Ex.: FF"
+                    >
+                </div>
+
+                <div>
+                    <label for="inputBase">Base de origem</label>
+                    <select id="inputBase">
+                        <option value="2">Binário</option>
+                        <option value="8">Octal</option>
+                        <option value="10" selected>Decimal</option>
+                        <option value="16">Hexadecimal</option>
+                    </select>
+                </div>
+
+                <button id="convertBase">Converter</button>
+            </div>
+
+            <div class="base-results">
+                <div>
+                    <span>Binário</span>
+                    <strong id="binaryResult">—</strong>
+                </div>
+
+                <div>
+                    <span>Octal</span>
+                    <strong id="octalResult">—</strong>
+                </div>
+
+                <div>
+                    <span>Decimal</span>
+                    <strong id="decimalResult">—</strong>
+                </div>
+
+                <div>
+                    <span>Hexadecimal</span>
+                    <strong id="hexResult">—</strong>
+                </div>
+            </div>
+
+            <div id="baseError" class="error"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Calculadora Científica — HTML + CSS + JavaScript</p>
+        <p>Created by Vinicius Lazaroti</p>
+    </footer>
+
+    <!-- Links do javascript pq não entendi como importa tudo de uma vez sem criar um arquivo enorme de mil linhas -->
+    <script src="javascript/core.js"></script>
+    <script src="javascript/teclado.js"></script>
+    <script src="javascript/modulo calculadora.js"></script>
+    <script src="javascript/modulo função.js"></script>
+    <script src="javascript/modulo matriz.js"></script>
+    <script src="javascript/modulo analise.js"></script>
+    <script src="javascript/modulo base.js"></script>
+
+</body>
+</html>

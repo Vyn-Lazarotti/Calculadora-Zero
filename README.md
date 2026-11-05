@@ -68,9 +68,8 @@ Dê dois cliques no arquivo index.html, abrindo em seu browser de preferência, 
 
 # Como executar online
 
-```bash
 Abra a seguinte URL: https://vyn-lazarotti.github.io/Calculadora-Zero/
-```
+
 
 ---
 

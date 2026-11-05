@@ -14,7 +14,7 @@
 
 # Sobre o projeto
 
-Este projeto é o trabalho final da disciplina de Matemática Computacional Aplicada e simula uma calculadora científica utilizando HTML e JavaScript.
+Este projeto é o trabalho final da disciplina de Matemática Computacional Aplicada e simula uma calculadora científica utilizando HTML e JavaScript. A estética foi inspirada nos jogos Persona 3 e Persona 5.
 
 ---
 

@@ -1,0 +1,572 @@
+/* Toda a parte estética é inspirada em Persona 5, porém com o azul do 3 Reload */
+
+/* Configurações gerais */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background: #303030;
+    --background-dark: #0f0f0f;
+    --card: #303030;
+    --card-light: #1c1c1c;
+    --primary: #51eefc;
+    --primary-hover: #6d9ac7;
+    --primary-dark: #303030;
+    --success: #00ff9d;
+    --danger: #ff0000;
+    --warning: #ffcc00;
+    --text: #dfdfdf;
+    --muted: #a8a8a8;
+    --border: #ffffff;
+    --border-dark: #00065e;
+    --input: #080808;
+    --shadow: rgba(0, 0, 0, 0.75);
+    --blue-shadow: #1269cc;
+}
+
+/* Corpo da página */
+body {
+    font-family:
+        "Arial Black",
+        Impact,
+        Haettenschweiler,
+        Arial,
+        sans-serif;
+    background:
+        linear-gradient(
+            135deg,
+            #050505 0%,
+            #0b0b0b 50%,
+            #050505 100%
+        );
+    background-attachment: fixed;
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+p,
+label,
+input,
+select,
+button,
+td,
+th,
+code {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+/* Cabeçalho */
+header {
+    position: relative;
+    text-align: center;
+    padding: 55px 20px 45px;
+    background:
+        linear-gradient(
+            135deg,
+            transparent 0%,
+            rgba(1, 161, 253, 0.178) 45%,
+            rgba(0, 92, 230, 0.22) 100%
+        ); 
+    border-bottom: 4px solid #dfdfdf;
+    transform: skewY(-1.2deg);
+    box-shadow:
+        0 10px 0 #6d9ac7,
+        0 18px 30px rgba(0, 0, 0, 0.8);
+}
+
+header > * {
+    transform: skewY(1.2deg);
+}
+
+header h1 {
+    position: relative;
+    display: inline-block;
+    font-family:
+        Impact,
+        "Arial Black",
+        sans-serif;
+    font-size: clamp(2.4rem, 7vw, 5rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    color: #ffffff;
+    text-shadow:
+        5px 5px 0 #6d9ac7,
+        9px 9px 0 #000000;
+    transform: rotate(-2deg);
+    margin-bottom: 18px;
+}
+
+header h1::after {
+    content: "";
+    position: absolute;
+    left: -10%;
+    right: -15%;
+    bottom: -8px;
+    height: 10px;
+    background: #0786fd;
+    transform: rotate(-3deg);
+    z-index: -1;
+}
+
+header p {
+    color: #fdfdfd;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Conteúdo principal */
+main {
+    width: min(1150px, 94%);
+    margin: 0 auto;
+    padding: 50px 0 70px;
+}
+
+/* Cards */
+.card {
+    position: relative;
+    background:
+        linear-gradient(
+            145deg,
+            #161616 15%,
+            #303030 100%
+        );
+    border: 2px solid #ffffff;
+    border-radius: 0;
+    padding: 28px;
+    margin-bottom: 32px;
+    box-shadow:
+        10px 10px 0 #1269cc,
+        16px 16px 0 #303030,
+        0 20px 35px rgba(0, 0, 0, 0.65);
+    transform: skewX(-1deg);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform:
+        skewX(-1deg)
+        translate(-2px, -2px);
+    box-shadow:
+        13px 13px 0 #1269cc,
+        19px 19px 0 #000000,
+        0 25px 40px rgba(0, 0, 0, 0.65);
+}
+
+.card h2 {
+    color: #1269cc;
+    font-family:
+        Impact,
+        "Arial Black",
+        sans-serif;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    margin-bottom: 22px;
+}
+
+.card h3 {
+    color: var(--primary);
+    margin: 18px 0 12px;
+    text-transform: uppercase;
+}
+
+/* Campos de entrada */
+input,
+select {
+    background: var(--input);
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 11px;
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--primary);
+    box-shadow:
+        0 0 8px rgba(81, 238, 252, 0.5);
+}
+
+label {
+    display: block;
+    color: var(--text);
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+/* Botões */
+button {
+    background-color: #0b75d8;
+    color: #ffffff;
+    padding: 16px 22px;
+    border: 2px solid #ffffff;
+    border-radius: 0;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+button:hover {
+    background-color: #51affc;
+    color: #050505;
+    transform: translate(-2px, -2px);
+    box-shadow:
+        4px 4px 0 #1269cc;
+}
+
+button:active {
+    transform: translate(1px, 1px);
+    box-shadow: none;
+}
+
+.button-row,
+.operation-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 18px 0;
+}
+
+/* Calculadora básica */
+.calculator {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#display {
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.calculator-buttons button {
+    padding: 16px 10px;
+}
+
+/* Funções */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-bottom: 15px;
+}
+
+.form-grid input {
+    width: 100%;
+}
+
+.table-config {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.table-config input {
+    width: 100%;
+}
+
+/* Matriz */
+.matrix-section {
+    margin: 20px 0;
+}
+
+.matrix-section label {
+    margin-top: 12px;
+}
+
+.matrix-section input {
+    width: 100%;
+    max-width: 120px;
+    margin-bottom: 10px;
+}
+
+.matrix-container {
+    margin: 18px 0;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+.matrix {
+    display: grid;
+    gap: 8px;
+    margin: 15px 0;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.matrix-input {
+    width: 100%;
+    min-width: 0;
+    padding: 10px;
+    text-align: center;
+    background: #080808;
+    color: #ffffff;
+    border: 2px solid #0786fd;
+    border-radius: 0;
+    font-weight: bold;
+}
+
+.matrix-input:focus {
+    border-color: #51eefc;
+    box-shadow:
+        0 0 10px rgba(81, 238, 252, 0.5);
+}
+
+.matrix-operations {
+    margin: 20px 0;
+}
+
+.matrix-operations > input {
+    width: 100%;
+    max-width: 150px;
+}
+
+.operation-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.operation-buttons button {
+    flex: 1 1 180px;
+}
+
+.matrix-output {
+    margin-top: 25px;
+    padding: 20px;
+    background: #1c1c1c;
+    border: 2px solid #ffffff;
+    box-shadow:
+        5px 5px 0 #1269cc;
+}
+
+.matrix-output h3 {
+    margin-top: 0;
+}
+
+.matrix-result {
+    display: grid;
+    gap: 8px;
+    margin: 15px 0;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.matrix-cell {
+    min-width: 60px;
+    padding: 12px;
+    text-align: center;
+    background: #080808;
+    color: #51eefc;
+    border: 2px solid #0786fd;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-sizing: border-box;
+}
+
+/* Resultados das operações */
+.result {
+    margin-top: 18px;
+
+    color: var(--text);
+}
+
+.result-message {
+    margin-top: 10px;
+
+    font-weight: bold;
+}
+
+.result-message.success {
+    color: var(--success);
+}
+
+.result-message.error {
+    color: var(--danger);
+}
+
+/* Análise combinatória */
+.combinatorics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 18px;
+}
+.combinatorics-grid input {
+    width: 100%;
+}
+.repetition-control {
+    margin-top: 25px;
+    padding: 18px;
+    background: #1c1c1c;
+    border: 2px solid #ffffff;
+}
+
+.repetition-control input {
+    width: 100%;
+
+    margin: 12px 0;
+}
+
+/* Conversos de bases */
+.base-converter {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+    align-items: end;
+}
+
+.base-converter input,
+.base-converter select {
+    width: 100%;
+}
+
+.base-results {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+.base-results > div {
+    padding: 15px;
+    background: #1c1c1c;
+    border: 2px solid #ffffff;
+    box-shadow:
+        4px 4px 0 #1269cc;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.base-results span {
+    color: var(--primary);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.base-results strong {
+    color: #ffffff;
+    overflow-wrap: anywhere;
+}
+
+.error {
+    color: var(--danger);
+    margin-top: 12px;
+}
+
+/* Linhas divisórias */
+hr {
+    border: none;
+    height: 2px;
+    background: #6d9ac7;
+    margin: 25px 0;
+    box-shadow:
+        0 2px 5px #1269cc;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 25px 15px;
+    background: #0f0f0f;
+    border-top: 3px solid #6d9ac7;
+    color: var(--muted);
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Responsividade */
+@media (max-width: 700px) {
+
+    main {
+        width: 92%;
+        padding: 35px 0 50px;
+    }
+
+    .card {
+        padding: 20px;
+        transform: none;
+    }
+
+    .card:hover {
+        transform: translateY(-2px);
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .table-config {
+        grid-template-columns: 1fr;
+    }
+
+    .combinatorics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .base-converter {
+        grid-template-columns: 1fr;
+    }
+
+    .base-results {
+        grid-template-columns: 1fr;
+    }
+
+    .operation-buttons {
+        flex-direction: column;
+    }
+
+    .operation-buttons button {
+        width: 100%;
+    }
+
+    .calculator-buttons {
+        gap: 5px;
+    }
+
+    .calculator-buttons button {
+        padding: 13px 5px;
+    }
+
+    header {
+        padding: 40px 15px 35px;
+    }
+
+    header p {
+        font-size: 0.8rem;
+    }
+}

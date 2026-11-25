@@ -101,5 +101,8 @@ Durante o desenvolvimento deste projeto foram reforçados conhecimentos sobre:
 - Como hospedar um site 
 
 ---
+# Captura de tela
+
+<img src="Screenshot.png" alt="Screenshot/Calculadora Zero preview"/>
 
 <div align="center">
